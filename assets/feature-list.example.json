@@ -1,0 +1,17 @@
+{
+  "note": "The definition of done for this build. Flip `passes` to true only after checking the feature the way a user would. Do not delete or reword a feature to make the list look finished.",
+  "features": [
+    {
+      "id": 1,
+      "feature": "Add a habit with a name and an emoji",
+      "check": "Open the app, add a habit, reload the page: the habit is still there",
+      "passes": false
+    },
+    {
+      "id": 2,
+      "feature": "Tap a habit to mark it done today; tap again to undo",
+      "check": "Tap twice and confirm the streak goes up by one and back",
+      "passes": false
+    }
+  ]
+}

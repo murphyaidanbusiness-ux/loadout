@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: new-build-over-many-sessions
+expected_outcome: |
+  Claude sets up a harness for a multi-session build without writing the app: a place where progress lives between
+  sessions and an instruction to read it first, a feature list drawn from SPEC.md that can be marked pass or fail only
+  after a real check, a way to run the app and check a feature in a browser or with tests once code exists, a short
+  CLAUDE.md, and sensible permissions. It writes no application code and it does not pile on pieces a solo weekend
+  build has no use for.
+context:
+  scaffold_script: place-files.sh

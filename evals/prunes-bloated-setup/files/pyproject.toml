@@ -1,0 +1,15 @@
+[project]
+name = "logparse"
+version = "0.4.2"
+description = "Parse nginx and syslog lines into structured records"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100

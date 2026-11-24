@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: fits-harness-to-stripe-task
+expected_outcome: |
+  Claude reads the project, sees there are no tests and no .claude folder, and builds a harness fitted to the
+  Stripe subscription task: a way for Claude to check its own work (typecheck and lint at least, and a way to test the
+  webhook path), a short CLAUDE.md with the real commands, payment rules that carry reasons, secrets protected by a
+  deny rule, and a record of what was built and why. It does not install pieces the task has no use for without saying
+  why, and every file it writes is valid.
+context:
+  scaffold_script: place-files.sh

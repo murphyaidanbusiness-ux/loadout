@@ -1,0 +1,4 @@
+- https://example.com/sca-report-2026  (SCA footfall report, haven't read it yet)
+- customer told me the new place on Mill Road does "pay what you want Fridays"
+- my card reader fees: check the statement, think it was 1.69%
+- idea: the cost of a broken grinder day

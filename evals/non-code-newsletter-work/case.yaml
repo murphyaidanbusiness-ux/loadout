@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: non-code-newsletter-work
+expected_outcome: |
+  Claude recognises this is writing work with no code and builds a harness that fits it: a CLAUDE.md that points at
+  voice.md and says how the week runs, a repeatable way to draft an issue (a skill or command), and a check that
+  catches the two failures the owner named, made-up statistics and off-voice writing, before she sees a draft. It does
+  not add developer machinery that has no use here (test runners, linters, code-review agents, database servers), and
+  it says which pieces it skipped and why.
+context:
+  scaffold_script: place-files.sh

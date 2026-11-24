@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: prunes-bloated-setup
+expected_outcome: |
+  Claude audits the existing setup and finds what is wrong with it for bug-fixing work: a long CLAUDE.md of generic
+  advice with a wrong test command (npm test in a Python project) and contradictory rules, an allow-everything
+  permission list, and three MCP servers the project never uses. It cuts the CLAUDE.md down to what Claude can't work
+  out alone, keeps the four hard-won facts about the parser, fixes the test command, tightens permissions, removes or
+  flags the unused MCP servers, and makes the tests run by themselves after edits or before finishing. The result is
+  smaller than what it started with, and nothing the owner learned the hard way is lost.
+context:
+  scaffold_script: place-files.sh
