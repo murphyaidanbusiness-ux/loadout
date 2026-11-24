@@ -79,10 +79,10 @@ has got wrong here before, and whether anything must never happen.
 Run the bundled check from the project root. It reads only:
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/scripts/loadout_check.py" .
+python3 "${CLAUDE_SKILL_DIR}/scripts/harness_check.py" .
 ```
 
-(`scripts/loadout_check.py` is in this skill's folder; use `python` or `py -3` where `python3` is missing.) It lists
+(`scripts/harness_check.py` is in this skill's folder; use `python` or `py -3` where `python3` is missing.) It lists
 the eight pieces, the checks the project can already run, and concrete faults: settings that are not valid JSON,
 misspelled fields that are silently ignored, hooks pointing at missing scripts, commands in CLAUDE.md that do not
 exist. Without Python, do the same by hand: look for `CLAUDE.md`, `CLAUDE.local.md`, `AGENTS.md`, `.claude/rules/`,
@@ -205,7 +205,7 @@ If a piece cannot be tested here, say so in the report. Do not describe it as wo
 
 ### 7. Write the map and report
 
-Write `.claude/HARNESS.md` from `assets/loadout-map.md`. It is not loaded into sessions, so it costs nothing. It
+Write `.claude/HARNESS.md` from `assets/harness-map.md`. It is not loaded into sessions, so it costs nothing. It
 records the task, the loop, each of the eight with its reason and the condition for removing it, what was cut,
 what was tested and how, and what is waiting on the user. It is what makes the next `/loadout fix` or
 `/loadout prune` possible, and it is how a teammate learns why a hook exists.

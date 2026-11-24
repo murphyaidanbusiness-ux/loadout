@@ -516,9 +516,12 @@ def check_settings(root, files):
                         info["hooks"].append(f"{label}: {cmd if len(cmd) < 70 else cmd[:67] + '...'}")
                         if event == "Stop":
                             info["stop_hook"] = True
-                        expanded = cmd.replace("${CLAUDE_PROJECT_DIR}", root).replace("$CLAUDE_PROJECT_DIR", root)
+                        # A placeholder, not the root itself: a root with a space ("C:\Users\First Last")
+                        # would split the path at the space and report a hook that exists as missing.
+                        expanded = cmd.replace("${CLAUDE_PROJECT_DIR}", "@ROOT@").replace("$CLAUDE_PROJECT_DIR", "@ROOT@")
                         expanded = expanded.replace('"', "").replace("'", "")
                         for script in re.findall(r"([^\s\"']*\.claude/hooks/[^\s\"']+|[^\s\"']+\.(?:sh|py|mjs|js|ps1))", expanded):
+                            script = script.replace("@ROOT@", root)
                             sp = script if os.path.isabs(script) else os.path.join(root, script)
                             if not os.path.exists(sp):
                                 add("ERROR", "hooks", fname, f"`{event}` runs {rel(root, sp)}, which does not exist")
