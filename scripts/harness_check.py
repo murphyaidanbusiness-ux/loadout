@@ -563,7 +563,13 @@ def user_level():
 
 
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if "-h" in sys.argv or "--help" in sys.argv:
+        print(__doc__)
+        return 0
+    # The report uses UTF-8 characters; Windows consoles default to a legacy code page.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    args = [a for a in sys.argv[1:] if not a.startswith("-")]
     root = os.path.abspath(args[0] if args else ".")
     as_json = "--json" in sys.argv
     if not os.path.isdir(root):
